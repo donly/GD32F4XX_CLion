@@ -47,7 +47,7 @@ set(ARM_TOOLCHAIN_DIR /Applications/ArmGNUToolchain/12.2.mpacbti-rel1/arm-none-e
 brew tap homebrew/cask-versions
 brew install --cask gcc-arm-embedded
 ```
-- 安装Openocd
+- 安装 Openocd
 ```shell
 brew install openocd
 ```
@@ -56,11 +56,8 @@ brew install openocd
 openocd --version
 ```
 
-# Clion 设置
-
-- File > Settings > Build, Execution, Deployment> Toolchains
-```text
-C Compiler: arm-none-eabi-gcc
-C++ Compiler: arm-none-eabi-g++
-Debugger: arm-none-eabi-gdb
-```
+# 配置 OpenOCD
+- Edit > Edit Configuration... 
+- Add `Add New Configuration`，选择 `OpenOCD Download & Run`
+- Board config file 选择项目中的 `link.cfg`
+- 复制 gd32f450.cfg 到 OpenOCD 安装目录的子目录 `target` 下，如 `/usr/local/Cellar/open-ocd/0.11.0/share/openocd/scripts/target`
